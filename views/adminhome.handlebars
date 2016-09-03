@@ -1,0 +1,88 @@
+<!-- /. SIDEBAR MENU (navbar-side) -->
+        <div id="page-wrapper" class="page-wrapper-cls">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Store</h1>
+                    </div>
+                </div>
+                <div class="row">
+                   <div id="signupbox" style="margin-top: 50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                   <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Store Details<div style="float:right; font-size: 85%; position: relative; top:-10px"><a  href="#" id="uploadproductImageslink"><span class="fa fa-edit " style="color:black;"></span></a></div>
+
+                        </div>
+                        <div class="panel-body">
+                               <div class="alert alert-success" style="display:none" id="addAnotherProduct">
+                                    <p>Succesfully created</p>
+                                    <span></span>
+                                </div>
+                                <div id="addAnotherProduct1" style="display:none" class="col-md-offset-4 col-md-9">
+                                        <button id="addAnotherProductbutton" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp; Add Another Product</button>
+
+                                    </div>
+
+
+                        <div>
+                       <form id="createproductform" class="form-horizontal" role="form">
+
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="email" class="col-md-4 control-label">Name:</label>
+                                    <div class="col-md-6">
+                                    <p class="form-control-static">{{data.store.storename}}</p>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-4 control-label">Domain:</label>
+                                    <div class="col-md-6">
+                                    <p class="form-control-static">{{data.store.storename}}</p>
+
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="firstname" class="col-md-4 control-label">Email:</label>
+                                    <div class="col-md-6">
+                                    <p class="form-control-static">{{data.store.ownerEmail}}</p>
+
+                                    </div>
+                                </div>
+
+
+  </form>
+                        </div>
+                    </div>
+
+
+
+
+         </div>
+                </div>
+
+            </div>
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+
+ <script src="assets/js/jquery-1.11.1.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/dropzone.min.js"></script>
+    <script src="assets/js/productBackend.js"></script>
+    <script src="assets/js/productDetails.js"></script>

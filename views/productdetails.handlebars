@@ -1,0 +1,277 @@
+<style>
+.dropzonestyle {
+  position: relative;
+  border: 10px dotted #FFF;
+  border-radius: 20px;
+  color: black;
+  font: bold 24px/200px arial;
+  height: 200px;
+  margin: 30px auto;
+  text-align: center;
+  width: 200px;
+}
+</style>
+
+
+
+        <!-- /. SIDEBAR MENU (navbar-side) -->
+        <div id="page-wrapper" class="page-wrapper-cls">
+      <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Product Details</h1>
+                    </div>
+                </div>
+<!-- /. Modal for adding photo for product  -->
+
+<div class="modal fade" id="addPics" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create Varient</h4>
+        </div>
+        <div class="modal-body">
+<form style="border-style: dashed" class="dropzone dz-clickable" action="/file-upload">
+             <input type="hidden"  id="storeid" value="{{data.response.storeId}}">
+             <input type="hidden"  id="productid" value="{{data.response._id}}">
+<div class="dz-default dz-message dropzonestyle">Drop your files</div></form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+   <!-- /. Modal for adding photo for product  -->
+
+                <div class="row">
+                <div class="col-md-12">
+<div class="panel panel-default">
+    <div class="panel-heading">
+     <div class="container-fluid panel-container">
+     <div class="col-xs-3 text-left">
+      <h4 class="panel-title">
+        <a href="#collapseImage" data-parent="#accordion" data-toggle="collapse">
+        Images</a>
+      </h4>
+      </div>
+      <div class="col-xs-6 text-right">
+
+      </div>
+      <div class="col-xs-3 text-right">
+
+        <a data-target="#addPics" data-toggle="modal">
+        add Pics</a>
+
+      </div>
+</div>
+
+
+    </div>
+    <div class="panel-collapse collapse" id="collapseImage">
+            <div class="panel-body">
+
+
+            <div style="display:none" id="productUpload">
+             <form style="border-style: dashed" class="dropzone dz-clickable" action="/file-upload">
+             <input type="hidden"  id="storeid" value="{{data.response.storeId}}">
+             <input type="hidden"  id="productid" value="{{data.response._id}}">
+<div class="dz-default dz-message"><span>Drop files here to upload</span></div></form>
+            </div>
+            <div id="productImages">
+            {{#each data.response.assets.imgs}}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                 <input type="hidden"  id="arrayid" value="{{this._id}}">
+                    <img class="img-responsive" src="{{this.img.thumbnailsrc}}" alt=""><i class="fa fa-trash"></i>
+                </a>
+            </div>
+            {{/each}}
+
+           </div>
+                        </div>
+    </div>
+  </div>
+</div>
+                </div>
+             <div class="row">
+
+
+
+               <div class="col-md-12">
+                      <!--    Striped Rows Table  -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Product Images<div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="uploadproductImageslink" href="#">Upload</a></div>
+                        </div>
+                        <div class="panel-body">
+
+
+            <div style="display:none" id="productUpload">
+             <form style="border-style: dashed" class="dropzone dz-clickable" action="/file-upload">
+             <input type="hidden"  id="storeid" value="{{data.response.storeId}}">
+             <input type="hidden"  id="productid" value="{{data.response._id}}">
+<div class="dz-default dz-message"><span>Drop files here to upload</span></div></form>
+            </div>
+            <div id="productImages">
+            {{#each data.response.assets.imgs}}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                 <input type="hidden"  id="arrayid" value="{{this._id}}">
+                    <img class="img-responsive" src="{{this.img.thumbnailsrc}}" alt=""><i class="fa fa-trash"></i>
+                </a>
+            </div>
+            {{/each}}
+
+           </div>
+                        </div>
+                    </div>
+                    <!--  End  Striped Rows Table  -->
+                </div>
+
+ </div>
+
+
+
+
+                <div class="row">
+                <div class="col-md-6">
+<div class="panel panel-default">
+    <div class="panel-heading">
+     <div class="container-fluid panel-container">
+     <div class="col-xs-3 text-left">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Varients</a>
+      </h4>
+      </div>
+      <div class="col-xs-6 text-right">
+
+      </div>
+      <div class="col-xs-3 text-right">
+
+        <a data-toggle="modal" data-target="#addVarient">
+        add Varient</a>
+
+      </div>
+</div>
+
+
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <ul class="list-group">
+      {{#each data.response.pv}}
+        <li class="list-group-item">{{this.sku}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+ <!-- /. Modal for adding varient  -->
+
+<div class="modal fade" id="addVarient" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create Varient</h4>
+        </div>
+        <div class="modal-body">
+
+        <div class="alert alert-success" style="display:none" id="addAnotherProductvarient">
+                                    <p>Succesfully created</p>
+                                    <span></span>
+                                </div>
+                                <div id="addAnotherProductvarient1" style="display:none" class="col-md-offset-4 col-md-9">
+                                        <button id="addAnotherProductvarientbutton" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp; Add Another Varient</button>
+
+                                    </div>
+           <form role="form" class="form-horizontal" id="create-varient" name="productvarientform">
+
+                                <div class="alert alert-danger" style="display:none" id="signupalert">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="email">Name</label>
+                                    <div class="col-md-6">
+                                         <input type = "text" class = "form-control" name="varientName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="firstname">SKU</label>
+                                    <div class="col-md-6">
+                                       <input type = "text" class = "form-control" name="sku">
+                                    </div>
+                                </div>
+            <input type="hidden" name="pid" value="{{data.response._id}}">
+                                 {{#each data.response.variants.attrs}}
+<div class="form-group">
+<label class="col-md-4 control-label" for="lastname">{{this.name}}
+</label>
+<div class="col-md-6">
+<select class="form-control" name="{{this.name}}">
+<option>select one</option>
+{{#each this.values}}
+<option>{{this}}</option>
+{{/each}}
+</select>
+</div>
+</div>
+ {{/each}}
+
+
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button class="btn btn-info" type="button" id="btn-create-varient"><i class="icon-hand-right"></i> &nbsp; create</button>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+   <!-- /. Modal for adding varient  -->
+
+                </div>
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+ <script src="assets/js/jquery-1.11.1.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/dropzone.min.js"></script>
+    <script src="assets/js/productBackend.js"></script>
+    <script src="assets/js/productDetails.js"></script>

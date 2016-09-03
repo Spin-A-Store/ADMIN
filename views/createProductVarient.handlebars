@@ -1,0 +1,292 @@
+
+        <!-- /. SIDEBAR MENU (navbar-side) -->
+         <input type="hidden" id="storeid" value="{{data.store._id}}" name="storehiddenid">
+
+        <div id="page-wrapper" class="page-wrapper-cls">
+      <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line"><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addproduct">Create product</button>
+</h1>
+                    </div>
+                </div>
+                <div class="row">
+               <div class="col-md-12">
+                                     <div id="accordion" class="panel-group paginationcontainer">
+
+
+
+
+</div>
+<div class="panel panel-default custompagination">
+
+  </div>
+</div>
+
+                                 </div>
+
+
+
+
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+
+        <!-- /. Modal for adding varient  -->
+
+<div class="modal fade" id="addVarient" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create Varient</h4>
+        </div>
+        <div class="modal-body">
+           <form role="form" class="form-horizontal" id="create-varient">
+
+                                <div class="alert alert-danger" style="display:none" id="signupalert">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="email">Name</label>
+                                    <div class="col-md-6">
+                                         <input type = "text" class = "form-control" name="varientName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="firstname">SKU</label>
+                                    <div class="col-md-6">
+                                       <input type = "text" class = "form-control" name="sku">
+                                    </div>
+                                </div>
+                                 <div id="marker">  </div>
+
+
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button class="btn btn-info" type="button" id="btn-create-varient"><i class="icon-hand-right"></i> &nbsp; create</button>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+   <!-- /. Modal for adding varient  -->
+    <!-- /. Modal for adding product  -->
+
+<div class="modal fade" id="addproduct" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h4 class="modal-title">Create Product</h4>
+        </div>
+        <div class="modal-body">
+         <div class="alert alert-success" style="display:none" id="addAnotherProduct">
+                                    <p>Succesfully created</p>
+                                    <span></span>
+                                </div>
+                                <div id="addAnotherProduct1" style="display:none" class="col-md-offset-4 col-md-9">
+                                        <button id="addAnotherProductbutton" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp; Add Another Product</button>
+
+                                    </div>
+            <form id="createproductform" class="form-horizontal" role="form">
+                                <input type="hidden" name="storeid" value="{{data.store._id}}">
+
+                                <div class="alert alert-danger" style="display:none" id="signupalert">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="email">Name</label>
+                                    <div class="col-md-10">
+                                         <input type = "text" class = "form-control" name="name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="email">Description</label>
+                                    <div class="col-md-10">
+                                         <textarea name="desc">Easy! You should check out MoxieManager!</textarea>
+                                    </div>
+                                </div>
+                               <div class="form-group">
+                                    <label class="col-md-2 control-label" for="email"></label>
+                                    <div class="col-md-10">
+                                         <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                           Create Varitaion attributes if you have varients
+
+                                           </div>
+                        <div class="panel-body">
+                           <div class="row">
+                           <div class="form-group">
+                           <div class="col-md-2"><input type = "text" class = "form-control" name="var1"></div><div class="col-md-10"><input type = "text" class = "form-control tinput" name="val1"></div>
+                           </div>
+                           </div>
+                           <div class="row">
+                           <div class="form-group">
+                           <div class="col-md-2"><input type = "text" class = "form-control" name="var2"></div><div class="col-md-10"><input type = "text" class = "form-control tinput" name="val2"></div>
+                           </div>
+                           </div>
+                           <div class="row">
+                           <div class="form-group">
+                           <div class="col-md-2"><input type = "text" class = "form-control" name="var3"></div><div class="col-md-10"><input type = "text" class = "form-control tinput" name="val3"></div>
+                           </div>
+                           </div>
+                         </div>
+                                    </div>
+
+
+                   </div>
+                                  </div>
+
+
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button class="btn btn-info" type="button" id="btn-create"><i class="icon-hand-right"></i> &nbsp; create</button>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="closebtn">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+   <!-- /. Modal for adding product  -->
+   <!-- /. Modal for adding product  image-->
+
+<div class="modal fade" id="addproductimage" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h4 class="modal-title">Create Product</h4>
+        </div>
+        <div class="modal-body">
+
+<div class="row">
+
+
+
+               <div class="col-md-12">
+                      <!--    Striped Rows Table  -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Product Images<div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="uploadproductImageslink" href="#">Upload</a></div>
+                        </div>
+                        <div class="panel-body">
+
+
+            <div style="display:none" id="productUpload">
+             <form style="border-style: dashed" class="dropzone dz-clickable" action="/file-upload">
+             <input type="hidden"  id="storeid" value="{{data.response.storeId}}">
+             <input type="hidden"  id="productid" value="{{data.response._id}}">
+<div class="dz-default dz-message"><span>Drop files here to upload</span></div></form>
+            </div>
+            <div id="productImages">
+            {{#each data.response.assets.imgs}}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                 <input type="hidden"  id="arrayid" value="{{this._id}}">
+                    <img class="img-responsive" src="{{this.img.thumbnailsrc}}" alt=""><i class="fa fa-trash"></i>
+                </a>
+            </div>
+            {{/each}}
+
+           </div>
+                        </div>
+                    </div>
+                    <!--  End  Striped Rows Table  -->
+                </div>
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="closebtn">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+   <!-- /. Modal for adding product image -->
+
+
+
+
+
+
+
+
+
+
+   <script src="assets/js/jquery-1.11.1.js"></script>
+   <script type="text/javascript" src="http://paginationjs.com/dist/2.0.7/pagination.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/dropzone.min.js"></script>
+    <script src="assets/js/productBackend.js"></script>
+    <script src="assets/js/productDetails.js"></script>
+
+    <script src="assets/js/productVarient.js"></script>
+    <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="http://xoxco.com/examples/jquery.tagsinput.js"></script>
+    <script>$('.tinput').tagsInput();</script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+
