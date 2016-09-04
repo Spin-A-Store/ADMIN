@@ -1,9 +1,9 @@
-var config={
+var config = {
 
-"apihost":"localhost",
- "apihostport":"3000",
- "mediapath":"C:\\spin-a-store-media\\",
- "imagebaseurl":"http://spinastore.com/productimages/"
+    "apihost": "localhost",
+    "apihostport": "3000",
+    "mediapath": "/opt/assets/",
+    "imagebaseurl": "/productimages/"
 
 }
 

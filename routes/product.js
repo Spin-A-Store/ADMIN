@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var store = require('../handlers/store/storeHandler.js');
 var config = require('../config/config.js');
 var needle = require('needle');
 var passport = require('passport')
